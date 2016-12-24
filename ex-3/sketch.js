@@ -39,6 +39,28 @@ function draw() {
 /*
 //      fill(r);
 //      rect(x * scl, y * scl, scl, scl);
-*/
+
 //Particle
+function Particle() {
+  this.pos = createVector(random(width), random(height));
+  this.vel = createVector(0, 0);
+  this.acc = createVector(0, 0);
+    this.update = function() {
+    this.vel.add(this.acc);
+    this.vel.limit(this.maxspeed);
+    this.pos.add(this.vel);
+    this.acc.mult(0);
+  }
+    this.applyForce = function(force) {
+    this.acc.add(force);
+  }
+    this.show = function() {
+    stroke(0);
+    strokeWeight(1);
+    point(this.pos.x, this.pos.y);
+    this.updatePrev();
+  }
+// COULDN'T MAKE IT PASS THE MINUTE 10 :(
+
+*/
 
